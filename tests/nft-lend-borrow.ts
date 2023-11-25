@@ -735,7 +735,7 @@ describe("nft-lend-borrow", () => {
         await program.methods
             .withdrawOffer(
                 new anchor.BN(minimumBalanceForRentExemption),
-                collectionId
+                //collectionId
             )
             .accounts({
                 offerLoan: offerPDA,
