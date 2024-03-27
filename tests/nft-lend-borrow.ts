@@ -356,9 +356,9 @@ describe("nft-lend-borrow", () => {
         assert.isAbove(
             borrowerAccount.lamports,
             borrowerInitialBalance +
-                offerAmount.toNumber() -
-                (minimumBalanceForRentExemption +
-                    minimumBalanceForRentExemptionForOfferAccount * 2)
+            offerAmount.toNumber() -
+            (minimumBalanceForRentExemption +
+                minimumBalanceForRentExemptionForOfferAccount * 2)
         );
 
         const vaultAssetTokenAccount = await getAccount(
@@ -604,9 +604,9 @@ describe("nft-lend-borrow", () => {
         assert.approximately(
             borrowerAccount.lamports,
             borrowerInitialBalance +
-                offerAmount.toNumber() -
-                (minimumBalanceForRentExemption +
-                    minimumBalanceForRentExemptionForOfferAccount),
+            offerAmount.toNumber() -
+            (minimumBalanceForRentExemption +
+                minimumBalanceForRentExemptionForOfferAccount),
             0.5 * LAMPORTS_PER_SOL
         );
 
@@ -734,8 +734,7 @@ describe("nft-lend-borrow", () => {
 
         await program.methods
             .withdrawOffer(
-                new anchor.BN(minimumBalanceForRentExemption),
-                collectionId
+                new anchor.BN(minimumBalanceForRentExemption)
             )
             .accounts({
                 offerLoan: offerPDA,
